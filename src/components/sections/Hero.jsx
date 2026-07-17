@@ -2,24 +2,29 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { HiOutlineBeaker, HiOutlineCommandLine, HiOutlineHeadphones, HiOutlineMusicalNote } from "react-icons/hi2";
-import { useMemo } from "react";
+import { HiOutlineCommandLine, HiOutlineMusicalNote } from "react-icons/hi2";
+
 
 
 const Hero = () => {
-    const colors = ["#FFE998", "#F6D56D", "#C89B3C"];
-
-    const embers = useMemo(
-        () =>
-            Array.from({ length: 16 }, () => ({
-                left: Math.random() * 100,
-                size: 2 + Math.random() * 3,
-                delay: Math.random() * 10,
-                duration: 8 + Math.random() * 8,
-                color: colors[Math.floor(Math.random() * colors.length)],
-            })),
-        []
-    );
+    const embers = [
+        { left: 4, size: 2.5, delay: 0.3, duration: 11, color: "#FFE998" },
+        { left: 9, size: 3, delay: 2.1, duration: 13, color: "#C89B3C" },
+        { left: 15, size: 2, delay: 5.8, duration: 10, color: "#F6D56D" },
+        { left: 22, size: 3.5, delay: 1.7, duration: 14, color: "#FFE998" },
+        { left: 29, size: 2.8, delay: 7.4, duration: 12, color: "#C89B3C" },
+        { left: 36, size: 2.2, delay: 3.5, duration: 11, color: "#F6D56D" },
+        { left: 43, size: 4, delay: 6.1, duration: 15, color: "#FFE998" },
+        { left: 50, size: 2.5, delay: 4.2, duration: 12, color: "#C89B3C" },
+        { left: 57, size: 3.2, delay: 8.3, duration: 13, color: "#F6D56D" },
+        { left: 64, size: 2.6, delay: 2.9, duration: 10, color: "#FFE998" },
+        { left: 71, size: 3.7, delay: 5.4, duration: 14, color: "#C89B3C" },
+        { left: 78, size: 2.4, delay: 0.8, duration: 11, color: "#F6D56D" },
+        { left: 84, size: 3, delay: 6.8, duration: 12, color: "#FFE998" },
+        { left: 89, size: 2.2, delay: 4.5, duration: 10, color: "#C89B3C" },
+        { left: 94, size: 3.4, delay: 7.9, duration: 13, color: "#F6D56D" },
+        { left: 98, size: 2.7, delay: 1.4, duration: 12, color: "#FFE998" },
+    ];
 
     return (
         <section className="relative py-6 flex md:min-h-screen lg:min-h-screen items-start justify-center overflow-hidden bg-[#050505] pt-5 lg:pt-20 sm:pt-24 md:items-center md:pt-0">

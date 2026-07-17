@@ -1,44 +1,53 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-
 :root {
   color-scheme: dark;
 
   /* Backgrounds */
   --bg-primary: #050505;
-  --bg-secondary: #0C0C0D;
+  --bg-secondary: #0c0c0d;
   --bg-tertiary: #141414;
 
   /* Surfaces */
   --surface: #171717;
-  --surface-hover: #1E1E1E;
+  --surface-hover: #1e1e1e;
 
   /* Brand */
-  --primary: #C89B3C;
-  --primary-light: #FFEE98;
-  --primary-dark: #8F691F;
+  --primary: #c89b3c;
+  --primary-light: #ffee98;
+  --primary-dark: #8f691f;
 
   /* Text */
-  --text-primary: #F5F5F5;
-  --text-secondary: #B3B3B3;
-  --text-muted: #7A7A7A;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b3b3b3;
+  --text-muted: #7a7a7a;
 
   /* Borders */
-  --border: rgba(255,255,255,.08);
-  --border-light: rgba(200,155,60,.25);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(200, 155, 60, 0.25);
 
   /* Effects */
-  --glass: rgba(255,255,255,.04);
-  --glass-border: rgba(255,255,255,.08);
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
 
   /* Shadows */
-  --shadow-gold: 0 0 40px rgba(200,155,60,.12);
-  --shadow-dark: 0 12px 40px rgba(0,0,0,.45);
+  --shadow-gold: 0 0 40px rgba(200, 155, 60, 0.12);
+  --shadow-dark: 0 12px 40px rgba(0, 0, 0, 0.45);
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #050505 0%, #0C0C0D 45%, #171717 100%);
-  --gradient-gold: linear-gradient(90deg, #A67A28 0%, #FFEE98 50%, #A67A28 100%);
+  --gradient-primary: linear-gradient(
+    135deg,
+    #050505 0%,
+    #0c0c0d 45%,
+    #171717 100%
+  );
+  --gradient-gold: linear-gradient(
+    90deg,
+    #a67a28 0%,
+    #ffee98 50%,
+    #a67a28 100%
+  );
   --gradient-surface: linear-gradient(180deg, #181818 0%, #101010 100%);
 }
 
@@ -79,39 +88,76 @@ button {
 ========================================================== */
 
 .ember {
-    position: absolute;
-    bottom: -30px;
-    border-radius: 9999px;
-    filter: blur(1px);
-    opacity: 0;
-    animation: emberRise linear infinite;
-    will-change: transform, opacity;
+  position: absolute;
+  bottom: -30px;
+  border-radius: 9999px;
+  filter: blur(1px);
+  opacity: 0;
+  animation: emberRise linear infinite;
+  will-change: transform, opacity;
 }
 
 @keyframes emberRise {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.4);
+    opacity: 0;
+  }
 
-    0% {
-        transform: translate3d(0, 0, 0) scale(.4);
-        opacity: 0;
-    }
+  10% {
+    opacity: 0.8;
+  }
 
-    10% {
-        opacity: .8;
-    }
+  40% {
+    transform: translate3d(-20px, -180px, 0) scale(0.9);
+  }
 
-    40% {
-        transform: translate3d(-20px, -180px, 0) scale(.9);
-    }
+  70% {
+    transform: translate3d(15px, -420px, 0) scale(0.7);
+    opacity: 0.6;
+  }
 
-    70% {
-        transform: translate3d(15px, -420px, 0) scale(.7);
-        opacity: .6;
-    }
-
-    100% {
-        transform: translate3d(-10px, -650px, 0) scale(.2);
-        opacity: 0;
-    }
-
+  100% {
+    transform: translate3d(-10px, -650px, 0) scale(0.2);
+    opacity: 0;
+  }
 }
 
+/* ==========================================================
+   Reusable Components
+========================================================== */
+
+.dv-glass{
+    position:relative;
+    overflow:hidden;
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.06),
+        rgba(255,255,255,.02)
+    );
+
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        inset 0 -1px 0 rgba(255,255,255,.03),
+        0 25px 80px rgba(0,0,0,.45);
+}
+
+.dv-glass::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.08),
+        transparent 35%
+    );
+
+    pointer-events:none;
+}

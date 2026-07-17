@@ -11,6 +11,7 @@ import {  HiOutlineXMark } from "react-icons/hi2";
 
 const navLinks = [
     { name: "Home", href: "/" },
+    { name: "About us", href: "/aboutus" },
     { name: "Music", href: "/music" },
     { name: "Videos", href: "/videos" },
     { name: "Gallery", href: "/gallery" },
