@@ -4,6 +4,42 @@
 
 :root {
   color-scheme: dark;
+
+  /* Backgrounds */
+  --bg-primary: #050505;
+  --bg-secondary: #0C0C0D;
+  --bg-tertiary: #141414;
+
+  /* Surfaces */
+  --surface: #171717;
+  --surface-hover: #1E1E1E;
+
+  /* Brand */
+  --primary: #C89B3C;
+  --primary-light: #FFEE98;
+  --primary-dark: #8F691F;
+
+  /* Text */
+  --text-primary: #F5F5F5;
+  --text-secondary: #B3B3B3;
+  --text-muted: #7A7A7A;
+
+  /* Borders */
+  --border: rgba(255,255,255,.08);
+  --border-light: rgba(200,155,60,.25);
+
+  /* Effects */
+  --glass: rgba(255,255,255,.04);
+  --glass-border: rgba(255,255,255,.08);
+
+  /* Shadows */
+  --shadow-gold: 0 0 40px rgba(200,155,60,.12);
+  --shadow-dark: 0 12px 40px rgba(0,0,0,.45);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #050505 0%, #0C0C0D 45%, #171717 100%);
+  --gradient-gold: linear-gradient(90deg, #A67A28 0%, #FFEE98 50%, #A67A28 100%);
+  --gradient-surface: linear-gradient(180deg, #181818 0%, #101010 100%);
 }
 
 .font-body {
@@ -24,7 +60,7 @@ html {
 
 body {
   min-height: 100vh;
-  background: var(--bg-primary);
+  background: var(--gradient-primary);
   color: var(--text-primary);
   overflow-x: hidden;
 }
@@ -38,8 +74,4 @@ button {
   cursor: pointer;
 }
 
-/* a {
-  text-decoration: none;
-  color: inherit;
-} */
 

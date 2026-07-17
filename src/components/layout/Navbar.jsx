@@ -61,11 +61,11 @@ export default function Navbar() {
             transition={{ duration: 0.35, ease: "easeInOut" }}
             className="fixed inset-x-0 top-0 z-50 transition-transform duration-300"
         >
-            <nav className="h-20 w-full flex items-center justify-between px-6 lg:px-12 bg-white/5 backdrop-blur-2xl border-b border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+            <nav className="relative h-20 w-full flex items-center justify-between px-6 lg:px-12 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0.02)_40%,rgba(0,0,0,0.18)_100%)] backdrop-blur-3xl border-b border-[#C89B3C]/15 shadow-[0_8px_32px_rgba(0,0,0,0.45),0_0_40px_rgba(200,155,60,0.08)]">
                 {/* Logo */}
                 <Link
                     href="/"
-                    className="font-brand text-[0.8rem] sm:text-[0.95rem] md:text-lg lg:text-xl font-semibold uppercase tracking-[0.18em] bg-gradient-to-r from-[#A67A28] via-[#FFEE98] to-[#A67A28] bg-clip-text text-transparent">
+                   className="font-brand text-[0.8rem] sm:text-[0.95rem] md:text-lg lg:text-xl font-semibold uppercase tracking-[0.18em] bg-gradient-to-r from-[#A67A28] via-[#FFEE98] to-[#A67A28] bg-clip-text text-transparent">
                     Disquietude Vengeance
                 </Link>
                 
