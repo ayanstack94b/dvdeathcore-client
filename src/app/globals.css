@@ -74,4 +74,44 @@ button {
   cursor: pointer;
 }
 
+/* ==========================================================
+   Hero Embers
+========================================================== */
+
+.ember {
+    position: absolute;
+    bottom: -30px;
+    border-radius: 9999px;
+    filter: blur(1px);
+    opacity: 0;
+    animation: emberRise linear infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes emberRise {
+
+    0% {
+        transform: translate3d(0, 0, 0) scale(.4);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .8;
+    }
+
+    40% {
+        transform: translate3d(-20px, -180px, 0) scale(.9);
+    }
+
+    70% {
+        transform: translate3d(15px, -420px, 0) scale(.7);
+        opacity: .6;
+    }
+
+    100% {
+        transform: translate3d(-10px, -650px, 0) scale(.2);
+        opacity: 0;
+    }
+
+}
 
