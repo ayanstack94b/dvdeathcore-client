@@ -38,7 +38,7 @@ export default function AboutUs() {
 
                     {/* Background Image */}
                     <Image
-                        src="/images/Band-2.png"
+                        src="/images/band.png"
                         alt="Disquietude Vengeance performing live"
                         fill
                         priority
