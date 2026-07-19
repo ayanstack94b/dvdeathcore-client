@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import { Cinzel } from "next/font/google";
 import Footer from "@/components/layout/Footer";
+import LenisProvider from "@/components/providers/LenisProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,9 +45,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.variable} ${cinzel.variable} antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
+        <LenisProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );

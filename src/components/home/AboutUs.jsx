@@ -41,6 +41,7 @@ export default function AboutUs() {
                         src="/images/band.png"
                         alt="Disquietude Vengeance performing live"
                         fill
+                        sizes="(max-width: 768px) 100vw, 80vw"
                         priority
                         className="object-cover object-center grayscale"
                     />
@@ -57,10 +58,8 @@ export default function AboutUs() {
                     <div className="absolute -left-20 bottom-0 h-[320px] w-[320px] rounded-full bg-[#C89B3C]/10 blur-[160px]" />
 
                     {/* Glass Layer */}
-                    <div className="absolute inset-0 bg-white/[0.03] backdrop-blur-[3px]" />
+                    <div className="absolute inset-0 bg-white/[0.03] backdrop-blur-[1px]" />
 
-                    {/* Noise */}
-                    <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "url('/images/noise.png')" }} />
 
                     {/* Content */}
                     <div className="relative z-20 flex min-h-[520px] items-center p-8 md:min-h-[600px] md:p-12 lg:min-h-170 lg:w-3/5 lg:p-16">

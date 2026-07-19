@@ -8,6 +8,10 @@ import { HiOutlineBars3 } from "react-icons/hi2";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import {  HiOutlineXMark } from "react-icons/hi2";
+import { useLenis } from "../providers/LenisProvider";
+
+
+
 
 const navLinks = [
     { name: "Home", href: "/" },
@@ -19,41 +23,45 @@ const navLinks = [
     { name: "Contact", href: "/contact" },
 ];
 export default function Navbar() {
-    const lastScrollY = useRef(0);
+
+    const lenis = useLenis();
     const isVisible = useRef(true);
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
+        if (!lenis.current) return;
+
         const navbar = document.getElementById("navbar");
+        const instance = lenis.current;
 
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-
-            if (currentScrollY <= 10) {
+        const handleScroll = ({ scroll, direction }) => {
+            // Always show navbar near the top
+            if (scroll <= 10) {
                 navbar.style.transform = "translateY(0)";
                 isVisible.current = true;
-            } else if (
-                currentScrollY > lastScrollY.current &&
-                isVisible.current
-            ) {
+                return;
+            }
+
+            // Don't hide until user has scrolled a bit
+            if (scroll > 120 && direction === 1 && isVisible.current) {
                 navbar.style.transform = "translateY(-110%)";
                 isVisible.current = false;
-            } else if (
-                currentScrollY < lastScrollY.current &&
-                !isVisible.current
-            ) {
+            }
+
+            // Show immediately when scrolling up
+            if (direction === -1 && !isVisible.current) {
                 navbar.style.transform = "translateY(0)";
                 isVisible.current = true;
             }
-
-            lastScrollY.current = currentScrollY;
         };
 
-        window.addEventListener("scroll", handleScroll);
+        instance.on("scroll", handleScroll);
 
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+        return () => {
+            instance.off("scroll", handleScroll);
+        };
+    }, [lenis]);
 
     return (
         <motion.header

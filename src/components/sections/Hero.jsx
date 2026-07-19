@@ -3,10 +3,16 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { HiOutlineCommandLine, HiOutlineMusicalNote } from "react-icons/hi2";
-
+import { useEffect, useState } from "react";
+import { useLenis } from "@/components/providers/LenisProvider";
 
 
 const Hero = () => {
+
+    const lenis = useLenis();
+
+    const [progress, setProgress] = useState(0);
+
     const embers = [
         { left: 4, size: 2.5, delay: 0.3, duration: 11, color: "#FFE998" },
         { left: 9, size: 3, delay: 2.1, duration: 13, color: "#C89B3C" },
@@ -25,6 +31,23 @@ const Hero = () => {
         { left: 94, size: 3.4, delay: 7.9, duration: 13, color: "#F6D56D" },
         { left: 98, size: 2.7, delay: 1.4, duration: 12, color: "#FFE998" },
     ];
+
+    useEffect(() => {
+        if (!lenis.current) return;
+
+        const instance = lenis.current;
+
+        const handleScroll = ({ scroll }) => {
+            const value = Math.min(scroll / 500, 1);
+            setProgress(value);
+        };
+
+        instance.on("scroll", handleScroll);
+
+        return () => {
+            instance.off("scroll", handleScroll);
+        };
+    }, [lenis]);
 
     return (
         <section className="relative py-6 flex md:min-h-screen lg:min-h-screen items-start justify-center overflow-hidden bg-[#050505] pt-5 lg:pt-20 sm:pt-24 md:items-center md:pt-0">
@@ -51,7 +74,14 @@ const Hero = () => {
             </div>
 
             {/* Hero Content */}
-            <div className="relative z-10 mt-8 flex w-full flex-col items-center px-4 md:mt-0">
+            <motion.div
+                className="relative z-10 mt-8 flex w-full flex-col items-center px-4 md:mt-0"
+                style={{
+                    opacity: 1 - progress,
+                    y: -progress * 120,
+                    scale: 1 - progress * 0.08,
+                }}
+            >
 
                 {/* Floating Logo */}
                 <motion.div
@@ -91,7 +121,8 @@ const Hero = () => {
 
                 </div>
 
-            </div>
+        
+        </motion.div>
 
         </section>
     );
