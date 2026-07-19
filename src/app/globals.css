@@ -207,3 +207,26 @@ button {
     }
 
 }
+/* featured music  */
+
+.glass-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(12px);
+    color:#fff;
+    transition:.35s ease;
+}
+
+.glass-btn:hover{
+    border-color:rgba(255,233,152,.35);
+    color:#FFE998;
+    transform:translateY(-2px);
+}
+
+/* ========== */

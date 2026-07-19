@@ -6,9 +6,11 @@ import Lenis from "lenis";
 export const LenisContext = createContext(null);
 
 export default function LenisProvider({ children }) {
+
     const lenisRef = useRef(null);
 
     useEffect(() => {
+
         const lenis = new Lenis({
             autoRaf: true,
             duration: 1.2,
@@ -22,6 +24,7 @@ export default function LenisProvider({ children }) {
         return () => {
             lenis.destroy();
         };
+
     }, []);
 
     return (
