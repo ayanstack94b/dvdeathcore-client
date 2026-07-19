@@ -5,6 +5,7 @@ import Image from "next/image";
 import { HiOutlineCommandLine, HiOutlineMusicalNote } from "react-icons/hi2";
 import { useEffect, useState } from "react";
 import { useLenis } from "@/components/providers/LenisProvider";
+import Link from "next/link";
 
 
 const Hero = () => {
@@ -109,15 +110,20 @@ const Hero = () => {
                 {/* Hero Actions */}
                 <div className="mt-5 flex flex-col items-center gap-2.5 sm:mt-10 sm:flex-row sm:gap-4">
 
-                    <button className="flex h-10 w-40 items-center justify-center gap-2 rounded-lg bg-gradient-to-br from-[#FFE998] to-[#57370D] px-4 text-[13px] font-semibold text-white transition-all duration-300 hover:brightness-110 sm:h-11 sm:w-[185px] sm:px-5 sm:text-sm lg:h-12 lg:w-[220px] lg:px-6 lg:text-[15px]">
-                        <HiOutlineCommandLine className="text-lg" />
-                        Deathcore Lab
-                    </button>
+                    <Link
+                        href="/about"
+                        className="cta-shine flex h-12 w-full items-center justify-center rounded-xl bg-linear-to-br from-[#FFE998] to-[#57370D] text-sm font-semibold text-white sm:w-56"
+                    >
+                        Discover Our Story
+                    </Link>
 
-                    <button className="flex h-10 w-[160px] items-center justify-center gap-2 rounded-lg border border-[#C89B3C] bg-transparent px-4 text-[13px] font-semibold text-[#C89B3C] transition-all duration-300 hover:bg-[#C89B3C]/10 sm:h-11 sm:w-[185px] sm:px-5 sm:text-sm lg:h-12 lg:w-[220px] lg:px-6 lg:text-[15px]">
-                        <HiOutlineMusicalNote className="text-lg" />
-                        Listen Now
-                    </button>
+                    <Link
+                        href="/music"
+                        className="cta-music flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-white/15 bg-white/5 text-sm font-semibold text-white backdrop-blur-xl sm:w-56"
+                    >
+                        <HiOutlineMusicalNote className="music-icon text-lg text-[#FFE998]" />
+                        Explore Music
+                    </Link>
 
                 </div>
 

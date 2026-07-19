@@ -164,16 +164,16 @@ export default function AboutUs() {
 
                                 <Link
                                     href="/about"
-                                    className="flex h-12 w-full items-center justify-center rounded-xl bg-linear-to-br from-[#FFE998] to-[#57370D] text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:brightness-110 sm:w-56"
+                                    className="cta-shine flex h-12 w-full items-center justify-center rounded-xl bg-linear-to-br from-[#FFE998] to-[#57370D] text-sm font-semibold text-white sm:w-56"
                                 >
                                     Discover Our Story
                                 </Link>
 
                                 <Link
                                     href="/music"
-                                    className="flex h-12 w-full items-center justify-center rounded-xl border border-white/15 bg-white/5 text-sm font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-[#C89B3C]/40 hover:bg-white/10 sm:w-56"
+                                    className="cta-music flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-white/15 bg-white/5 text-sm font-semibold text-white backdrop-blur-xl sm:w-56"
                                 >
-                                    <HiOutlineMusicalNote className="text-lg mr-3 text-[#FFE998]" />
+                                    <HiOutlineMusicalNote className="music-icon text-lg text-[#FFE998]" />
                                     Explore Music
                                 </Link>
 
