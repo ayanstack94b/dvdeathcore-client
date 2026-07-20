@@ -210,23 +210,44 @@ button {
 /* featured music  */
 
 .glass-btn{
+    width:52px;
+    height:52px;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    width:48px;
-    height:48px;
-    border-radius:14px;
+
+    border-radius:16px;
+
     border:1px solid rgba(255,255,255,.08);
-    background:rgba(255,255,255,.05);
-    backdrop-filter:blur(12px);
-    color:#fff;
-    transition:.35s ease;
+
+    background:linear-gradient(
+        180deg,
+        #305342,
+        #16241d
+    );
+
+    color:#EAFBF2;
+
+    flex-shrink:0;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.08),
+        0 8px 20px rgba(0,0,0,.35);
+
+    transition:
+        transform .3s,
+        box-shadow .3s;
+}
+
+.glass-btn svg{
+    width:22px;
+    height:22px;
 }
 
 .glass-btn:hover{
-    border-color:rgba(255,233,152,.35);
-    color:#FFE998;
-    transform:translateY(-2px);
+    transform:translateY(-3px);
 }
+
 
 /* ========== */

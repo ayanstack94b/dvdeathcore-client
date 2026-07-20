@@ -108,20 +108,21 @@ const Hero = () => {
                 </motion.div>
 
                 {/* Hero Actions */}
-                <div className="mt-5 flex flex-col items-center gap-2.5 sm:mt-10 sm:flex-row sm:gap-4">
+                <div className="mt-6 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
 
                     <Link
                         href="/about"
-                        className="cta-shine flex h-12 w-full items-center justify-center rounded-xl bg-linear-to-br from-[#FFE998] to-[#57370D] text-sm font-semibold text-white sm:w-56"
+                        className="cta-shine flex h-11  max-w-xs w-full  items-center justify-center rounded-lg
+                         bg-gradient-to-br from-[#FFE998] to-[#57370D] px-6 text-sm font-semibold text-white sm:w-56"
                     >
                         Discover Our Story
                     </Link>
 
                     <Link
                         href="/music"
-                        className="cta-music flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-white/15 bg-white/5 text-sm font-semibold text-white backdrop-blur-xl sm:w-56"
+                        className="cta-music flex h-11 w-full items-center justify-center gap-3 rounded border border-white/15 bg-white/5 px-6 text-sm font-semibold text-white backdrop-blur-xl sm:w-56"
                     >
-                        <HiOutlineMusicalNote className="music-icon text-lg text-[#FFE998]" />
+                        <HiOutlineMusicalNote className="text-lg text-[#FFE998]" />
                         Explore Music
                     </Link>
 

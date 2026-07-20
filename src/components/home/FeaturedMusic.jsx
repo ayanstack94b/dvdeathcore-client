@@ -155,18 +155,6 @@ export default function FeaturedMusic() {
             ease: "power4.out",
         })
 
-            .from(
-                ".stream-btn",
-                {
-                    y: 30,
-                    opacity: 0,
-                    scale: 0.8,
-                    stagger: 0.12,
-                    duration: 0.6,
-                    ease: "back.out(1.7)",
-                },
-                "-=0.35"
-            );
 
         return () => {
             clearInterval(listenerInterval);
@@ -178,16 +166,57 @@ export default function FeaturedMusic() {
     return (
         <motion.section
             ref={sectionRef}
-            className="relative overflow-hidden py-24 lg:py-36"
+            className="relative overflow-hidden py-28 md:py-36 lg:py-44"
         >
             {/* Background */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#193126_0%,#111b16_22%,#090909_60%,#050505_100%)]" />
 
-            {/* Green Ambient Glow */}
-            <div
-                ref={glowRef}
-                className="absolute left-1/2 top-40 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[#2d5b47]/20 blur-[180px] transition-transform duration-300"
-            />
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                    duration: 1.3,
+                    ease: [0.22, 1, 0.36, 1],
+                }}
+                className="absolute inset-0"
+            >
+
+                {/* Base */}
+
+                <div className="absolute inset-0 bg-[#050505]" />
+
+                {/* Transition Layer */}
+
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,#050505_0%,#050505_8%,#07100c_20%,#0d1d16_42%,#163126_72%,#19372a_100%)]" />
+
+                {/* Top Bloom */}
+
+                <div className="absolute left-1/2 top-[-220px] h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#5d9874]/8 blur-[180px]" />
+
+                {/* Left Bloom */}
+
+                <div className="absolute -left-52 top-36 h-[520px] w-[520px] rounded-full bg-[#2b6049]/18 blur-[190px]" />
+
+                {/* Right Bloom */}
+
+                <div className="absolute -right-52 top-52 h-[520px] w-[520px] rounded-full bg-[#376d55]/15 blur-[200px]" />
+
+                {/* Main Glow */}
+
+                <div
+                    ref={glowRef}
+                    className="absolute left-1/2 top-56 h-[640px] w-[640px] -translate-x-1/2 rounded-full bg-[#4f8c69]/15 blur-[240px] will-change-transform"
+                />
+
+                {/* Bottom Bloom */}
+
+                <div className="absolute bottom-[-260px] left-1/2 h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-[#224736]/12 blur-[220px]" />
+
+            </motion.div>
+
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,transparent_52%,rgba(0,0,0,.5)_100%)]" />
+
+
 
             <motion.div
                 initial="hidden"
@@ -205,7 +234,7 @@ export default function FeaturedMusic() {
                         },
                     },
                 }}
-                className="relative mx-auto flex max-w-7xl flex-col gap-14 px-6 lg:flex-row lg:items-center lg:gap-24"
+                className="relative z-10 mx-auto flex max-w-7xl flex-col gap-16 px-6 sm:px-8 lg:flex-row lg:items-center lg:gap-24"
             >
 
                 {/* Album Cover */}
@@ -213,7 +242,7 @@ export default function FeaturedMusic() {
                 <motion.div
                     ref={artworkRef}
                     variants={reveal}
-                    className="mx-auto w-full max-w-sm shrink-0 will-change-transform"
+                    className="mx-auto w-full max-w-[420px] shrink-0 will-change-transform lg:max-w-[480px]"
                 >
 
                     <Image
@@ -222,7 +251,7 @@ export default function FeaturedMusic() {
                         width={700}
                         height={700}
                         loading="eager"
-                        className="rounded-2xl border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.55)] transition-transform duration-300"
+                        className="w-full rounded-[28px] border border-white/10 shadow-[0_45px_140px_rgba(0,0,0,.65)] transition-all duration-500"
                     />
 
                 </motion.div>
@@ -237,7 +266,7 @@ export default function FeaturedMusic() {
                             Featured Music
                         </p>
 
-                        <h2 className="max-w-3xl text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
+                        <h2 className=" max-w-3xl text-[2.7rem] font-black leading-[0.95] tracking-tight text-white md:text-6xl lg:text-7xl">
                             Psycho Sadistic Existence
                         </h2>
 
@@ -253,10 +282,10 @@ export default function FeaturedMusic() {
 
                     <motion.div
                         variants={reveal}
-                        className="mt-10 grid grid-cols-2 gap-8 border-t border-white/10 pt-8 md:grid-cols-4"
+                        className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-white/10 pt-8 md:grid-cols-4 md:gap-8"
                     >
 
-                        <div>
+                        <div className="ml-2">
                             <p className="text-xs uppercase tracking-[0.25em] text-zinc-500">
                                 Released
                             </p>
@@ -266,7 +295,7 @@ export default function FeaturedMusic() {
                             </p>
                         </div>
 
-                        <div>
+                        <div className="ml-4">
                             <p className="text-xs uppercase tracking-[0.25em] text-zinc-500">
                                 Genre
                             </p>
@@ -276,7 +305,7 @@ export default function FeaturedMusic() {
                             </p>
                         </div>
 
-                        <div>
+                        <div className="ml-2">
                             <p className="text-xs uppercase tracking-[0.25em] text-zinc-500">
                                 Tracks
                             </p>
@@ -289,7 +318,7 @@ export default function FeaturedMusic() {
                             </p>
                         </div>
 
-                        <div>
+                        <div className="ml-1">
 
                             <div className="flex items-center gap-2">
 
@@ -301,7 +330,7 @@ export default function FeaturedMusic() {
 
                                 </span>
 
-                                <p className="text-xs uppercase tracking-[0.25em] text-zinc-500">
+                                <p className="md:text-xs text-[11px] uppercase tracking-[0.25em] text-zinc-500">
                                     Live Listeners
                                 </p>
 
@@ -319,110 +348,161 @@ export default function FeaturedMusic() {
                     </motion.div>
 
                     {/* Streaming Ribbon */}
-                    {/* Streaming Ribbon */}
 
                     <motion.div
                         ref={ribbonRef}
                         initial={{
                             opacity: 0,
-                            y: 60,
-                            scale: 0.96,
-                            rotateX: -8,
+                            y: 50,
+                            scale: 0.98,
                             filter: "blur(8px)",
                         }}
                         whileInView={{
                             opacity: 1,
                             y: 0,
                             scale: 1,
-                            rotateX: 0,
                             filter: "blur(0px)",
                         }}
                         viewport={{ once: true, amount: 0.35 }}
                         transition={{
-                            duration: 1,
+                            duration: 0.9,
                             ease: [0.22, 1, 0.36, 1],
                         }}
-                        whileHover={{
-                            y: -4,
-                            transition: {
-                                duration: 0.35,
-                            },
-                        }}
-                        className="relative mt-12 overflow-hidden [perspective:1200px]"
+                        className="relative mt-14"
                     >
 
                         {/* Ambient Glow */}
 
-                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#1d3328]/20 via-[#2d5b47]/10 to-transparent blur-3xl" />
+                        <div className="absolute inset-0 rounded-[32px] bg-[#2d5b47]/20 blur-3xl" />
 
-                        {/* Glass Card */}
+                        {/* Breathing Glow */}
 
-                        <div className="streaming-ribbon relative flex flex-wrap items-center gap-4 rounded-3xl border border-white/10 bg-white/5 px-6 py-5 backdrop-blur-xl">
+                        <motion.div
+                            animate={{
+                                opacity: [0.3, 0.6, 0.3],
+                                scale: [1, 1.03, 1],
+                            }}
+                            transition={{
+                                duration: 6,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
+                            className="absolute inset-0 rounded-[32px] bg-gradient-to-r from-[#3d7a5a]/10 via-[#5d9874]/10 to-[#3d7a5a]/10 blur-2xl"
+                        />
 
-                            <motion.span
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{
-                                    delay: 0.15,
-                                    duration: 0.45,
-                                }}
-                                className="mr-2 text-xs uppercase tracking-[0.35em] text-zinc-500"
-                            >
-                                Available On
-                            </motion.span>
+                        <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-2xl">
 
-                            <motion.button
-                                initial={{ opacity: 0, y: 18 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.25 }}
-                                whileHover={{ y: -4, scale: 1.08 }}
-                                whileTap={{ scale: 0.96 }}
-                                className="glass-btn"
-                            >
-                                <FaSpotify size={18} />
-                            </motion.button>
+                            {/* Header */}
 
-                            <motion.button
-                                initial={{ opacity: 0, y: 18 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.35 }}
-                                whileHover={{ y: -4, scale: 1.08 }}
-                                whileTap={{ scale: 0.96 }}
-                                className="glass-btn"
-                            >
-                                <FaYoutube size={18} />
-                            </motion.button>
+                            <div className="mb-8">
 
-                            <motion.button
-                                initial={{ opacity: 0, y: 18 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.45 }}
-                                whileHover={{ y: -4, scale: 1.08 }}
-                                whileTap={{ scale: 0.96 }}
-                                className="glass-btn"
-                            >
-                                <FaApple size={18} />
-                            </motion.button>
+                                <p className="text-xs font-semibold uppercase tracking-[0.45em] text-[#FFE998]">
+                                    Listen Now
+                                </p>
 
-                            <motion.button
-                                initial={{ opacity: 0, y: 18 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.55 }}
-                                whileHover={{ y: -4, scale: 1.08 }}
-                                whileTap={{ scale: 0.96 }}
-                                className="glass-btn"
-                            >
-                                <FaBandcamp size={18} />
-                            </motion.button>
+                                <h3 className="ribbon-title listen-title mt-3 text-2xl font-bold text-white">
+                                    We are Available Everywhere
+                                </h3>
+
+                                <p className="mt-3 max-w-xl text-sm leading-7 text-zinc-400">
+                                    Stream <span className="font-medium text-white">Psycho Sadistic Existence </span>
+                                     on your favourite platform or support the band directly through Bandcamp.
+                                </p>
+
+                            </div>
+
+                            {/* Streaming Platforms */}
+                            <div className="grid grid-cols-2 gap-4">
+
+                                {/* Spotify */}
+                                <Link
+                                    href="#"
+                                    className="stream-card  group flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-6 transition-all duration-300 hover:border-[#b39977]/40 hover:bg-white/[0.06]"
+                                >
+
+                                    <FaSpotify
+                                        size={28}
+                                        className="mb-4 text-[#1DB954]"
+                                    />
+
+                                    <h4 className="text-base font-semibold text-white">
+                                        Spotify
+                                    </h4>
+
+                                    <p className="mt-1 text-xs text-zinc-500">
+                                        Stream Album
+                                    </p>
+
+                                </Link>
+
+                                {/* Apple */}
+                                <Link
+                                    href="#"
+                                    className="stream-card group flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-6 transition-all duration-300 hover:border-[#b39977]/40 hover:bg-white/[0.06]"
+                                >
+                                    <FaApple
+                                        size={24}
+                                        className="mb-4 text-white"
+                                    />
+
+                                    <h4 className="text-base font-semibold text-white">
+                                        Apple
+                                    </h4>
+
+                                    <p className="mt-1 text-xs text-zinc-500">
+                                        Stream Album
+                                    </p>
+
+                                </Link>
+
+                                {/* YouTube */}
+                                <Link
+                                    href="#"
+                                    className="stream-card group flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-6 transition-all duration-300 hover:border-[#b39977]/40 hover:bg-white/[0.06]"
+                                >
+
+                                    <FaYoutube
+                                        size={24}
+                                        className="mb-4 text-[#FF0000]"
+                                    />
+                                    <h4 className="text-base font-semibold text-white">
+                                        Youtube
+                                    </h4>
+
+                                    <p className="mt-1 text-xs text-zinc-500">
+                                        Stream Album
+                                    </p>
+
+                                </Link>
+
+                               
+                                {/* Bandcamp */}
+                                <Link
+                                    href="#"
+                                    className="stream-card group flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-6 transition-all duration-300 hover:border-[#b39977]/40 hover:bg-white/[0.06]"
+                                >
+
+                                    <FaBandcamp
+                                        size={24}
+                                        className="text-[#629AA9] mb-4"
+                                    />
+
+                                    <h4 className="text-base font-semibold text-white">
+                                        Spotify
+                                    </h4>
+
+                                    <p className="mt-1 text-xs text-zinc-500">
+                                        Stream Album
+                                    </p>
+
+                                </Link>
+
+                            </div>
 
                         </div>
 
                     </motion.div>
+
                     {/* CTA */}
 
                     <motion.div
