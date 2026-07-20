@@ -149,25 +149,50 @@ button {
 
 /* CTA Shine */
 .cta-shine {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .cta-shine::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -35%;
-    width: 28%;
-    height: 100%;
-    transform: skewX(-12deg);
-    background: rgba(255, 255, 255, 0.35);
-    filter: blur(1px);
-    transition: transform 700ms ease-out;
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -160%;
+  width: 60%;
+  height: 320%;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255,255,255,.08) 40%,
+    rgba(255,255,255,.55) 50%,
+    rgba(255,255,255,.08) 60%,
+    transparent 80%
+  );
+  transform: rotate(18deg);
+  animation: mirrorShine 6s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.cta-shine:hover::before {
-    transform: translateX(500%) skewX(-12deg);
+@keyframes mirrorShine {
+  0% {
+    left: -160%;
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  22% {
+    left: 170%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 170%;
+    opacity: 0;
+  }
 }
 /* ===================================== */
 

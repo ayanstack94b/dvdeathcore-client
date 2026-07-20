@@ -314,7 +314,7 @@ export default function FeaturedMusic() {
                             <Link
                                 href="https://dvdeathcore.bandcamp.com/"
                                 target="_blank"
-                                className="group relative mt-8 flex overflow-hidden items-center justify-between rounded-2xl border border-white/10 bg-[#629AA9]/10 px-6 py-5 transition-all duration-300 hover:border-[#629AA9]/40 hover:bg-[#629AA9]/15"
+                                className="cta-shine inline-flex h-14 items-center justify-center rounded-2xl bg-gradient-to-r from-[#7A5A33] via-[#B39977] to-[#E6D0A3] px-8 text-sm font-semibold text-[#111111] shadow-[0_12px_30px_rgba(179,153,119,.35)] transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02]"
                             >
 
                                 {/* Mirror Shine */}
@@ -334,11 +334,11 @@ export default function FeaturedMusic() {
 
                                 <div className="relative z-10 flex items-center gap-4">
 
-                                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#629AA9]/15">
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl ">
 
                                         <FaBandcamp
-                                            size={28}
-                                            className="text-[#629AA9]"
+                                            size={32}
+                                            className="text-[#B39977]"
                                         />
 
                                     </div>
@@ -349,7 +349,7 @@ export default function FeaturedMusic() {
                                             Buy on Bandcamp
                                         </h4>
 
-                                        <p className="text-sm text-zinc-400">
+                                        <p className="text-sm text-zinc-600">
                                             High-quality digital download
                                         </p>
 
@@ -637,7 +637,7 @@ export default function FeaturedMusic() {
 
                         <Link
                             href="/music"
-                            className="cta-shine inline-flex h-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#5B5FEF] to-[#7B61FF] px-8 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.03]"
+                            className="cta-shine pointer-events-auto inline-flex h-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#6D4C2E] via-[#9B7750] to-[#C8A56A] px-8 text-sm font-semibold text-[#0A0A0A] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_10px_40px_rgba(179,153,119,.35)]"
                         >
                             Explore Discography
                         </Link>
