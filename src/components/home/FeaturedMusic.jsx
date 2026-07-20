@@ -13,6 +13,7 @@ import { useLenis } from "@/components/providers/LenisProvider";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { HiArrowLongRight } from "react-icons/hi2";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -185,38 +186,47 @@ export default function FeaturedMusic() {
 
                 <div className="absolute inset-0 bg-[#050505]" />
 
-                {/* Transition Layer */}
+                {/* Main Green Atmosphere */}
 
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,#050505_0%,#050505_8%,#07100c_20%,#0d1d16_42%,#163126_72%,#19372a_100%)]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,#07100c_0%,#0d1d16_18%,#163126_45%,#173428_72%,#12281f_100%)]" />
 
-                {/* Top Bloom */}
+                {/* Top Black Fade */}
 
-                <div className="absolute left-1/2 top-[-220px] h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#5d9874]/8 blur-[180px]" />
+                <div className="absolute inset-x-0 top-0 h-[240px] bg-gradient-to-b from-[#050505] via-[#050505]/90 to-transparent" />
 
                 {/* Left Bloom */}
 
-                <div className="absolute -left-52 top-36 h-[520px] w-[520px] rounded-full bg-[#2b6049]/18 blur-[190px]" />
-
-                {/* Right Bloom */}
-
-                <div className="absolute -right-52 top-52 h-[520px] w-[520px] rounded-full bg-[#376d55]/15 blur-[200px]" />
+                <div className="absolute -left-56 top-44 h-[620px] w-[620px] rounded-full bg-[#2b6049]/16 blur-[200px]" />
 
                 {/* Main Glow */}
 
                 <div
                     ref={glowRef}
-                    className="absolute left-1/2 top-56 h-[640px] w-[640px] -translate-x-1/2 rounded-full bg-[#4f8c69]/15 blur-[240px] will-change-transform"
+                    className="absolute left-[42%] top-[48%] h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-[#4f8c69]/12 blur-[230px] will-change-transform"
                 />
+
+                {/* Right Accent */}
+
+                <div className="absolute -right-40 top-52 h-[460px] w-[460px] rounded-full bg-[#376d55]/10 blur-[180px]" />
 
                 {/* Bottom Bloom */}
 
-                <div className="absolute bottom-[-260px] left-1/2 h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-[#224736]/12 blur-[220px]" />
+                <div className="absolute bottom-[-160px] left-[35%] h-[520px] w-[520px] rounded-full bg-[#29543f]/10 blur-[200px]" />
 
+                {/* Top Vignette */}
+
+                <div className="absolute inset-x-0 top-0 h-[320px] bg-gradient-to-b from-[#050505] via-transparent to-transparent" />
+
+                {/* Bottom Vignette */}
+
+                <div className="absolute inset-x-0 bottom-0 h-[320px] bg-gradient-to-t from-[#050505] via-[#050505]/90 to-transparent" />
+
+                {/* Edge Vignette */}
+
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_55%,rgba(0,0,0,.25)_100%)]" />
             </motion.div>
 
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,transparent_52%,rgba(0,0,0,.5)_100%)]" />
-
-
 
             <motion.div
                 initial="hidden"
@@ -234,31 +244,133 @@ export default function FeaturedMusic() {
                         },
                     },
                 }}
-                className="relative z-10 mx-auto flex max-w-7xl flex-col gap-16 px-6 sm:px-8 lg:flex-row lg:items-center lg:gap-24"
+                className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 sm:px-8 lg:grid-cols-[500px_minmax(0,1fr)] lg:gap-24 lg:items-start"
             >
+                {/* Left Column */}
 
-                {/* Album Cover */}
+                <div className="mx-auto w-full max-w-[420px] shrink-0 lg:max-w-[480px]">
+                    {/* Album Cover left div */}
 
-                <motion.div
-                    ref={artworkRef}
-                    variants={reveal}
-                    className="mx-auto w-full max-w-[420px] shrink-0 will-change-transform lg:max-w-[480px]"
-                >
+                    <motion.div
+                        ref={artworkRef}
+                        variants={reveal}
+                        className="mx-auto w-full max-w-[420px] shrink-0 will-change-transform lg:max-w-[480px]"
+                    >
 
-                    <Image
-                        src="/images/album-cover.jpg"
-                        alt="Psycho Sadistic Existence"
-                        width={700}
-                        height={700}
-                        loading="eager"
-                        className="w-full rounded-[28px] border border-white/10 shadow-[0_45px_140px_rgba(0,0,0,.65)] transition-all duration-500"
-                    />
+                        <Image
+                            src="/images/album-cover.jpg"
+                            alt="Psycho Sadistic Existence"
+                            width={700}
+                            height={700}
+                            loading="eager"
+                            className="w-full rounded-[28px] border border-white/10 shadow-[0_45px_140px_rgba(0,0,0,.65)] transition-all duration-500"
+                        />
 
-                </motion.div>
+                    </motion.div>
 
-                {/* Content */}
+                    {/* Desktop Only - Support the Band */}
 
-                <div className="flex-1">
+                    <motion.div
+                        variants={reveal}
+                        className="relative mt-6 overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.04] backdrop-blur-2xl"
+                    >
+
+                        {/* Ambient Glow */}
+
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#629AA9]/10 via-transparent to-transparent" />
+
+                        {/* Mirror Shine */}
+
+                        <motion.div
+                            // animate={{
+                            //     x: ["-220%", "700%"],
+                            // }}
+                            // transition={{
+                            //     duration: 1.4,
+                            //     ease: "easeInOut",
+                            //     repeat: Infinity,
+                            //     repeatDelay: 5,
+                            // }}
+                            className="pointer-events-none absolute inset-y-0 w-28 bg-gradient-to-r from-transparent via-white/25 to-transparent blur-xl"
+                        />
+
+                        <div className="relative lg:block hidden z-10 p-7">
+
+                            <p className="text-xs font-semibold uppercase tracking-[0.45em] text-[#FFE998]">
+                                SUPPORT THE BAND
+                            </p>
+
+                            <h3 className="mt-3 text-2xl font-bold text-white">
+                                Own the Album
+                            </h3>
+
+                            <p className="mt-4 text-sm leading-7 text-zinc-400">
+                                Purchase <span className="font-medium text-white">Psycho Sadistic Existence</span> on
+                                Bandcamp and directly support future releases, recordings,
+                                merchandise and independent touring.
+                            </p>
+
+                            {/* BandCamp CTA */}
+                            <Link
+                                href="https://dvdeathcore.bandcamp.com/"
+                                target="_blank"
+                                className="group relative mt-8 flex overflow-hidden items-center justify-between rounded-2xl border border-white/10 bg-[#629AA9]/10 px-6 py-5 transition-all duration-300 hover:border-[#629AA9]/40 hover:bg-[#629AA9]/15"
+                            >
+
+                                {/* Mirror Shine */}
+
+                                <motion.div
+                                    animate={{
+                                        x: [-180, 700],
+                                    }}
+                                    transition={{
+                                        duration: 1.3,
+                                        ease: [0.22, 1, 0.36, 1],
+                                        repeat: Infinity,
+                                        repeatDelay: 2,
+                                    }}
+                                    className="pointer-events-none absolute inset-y-0 -left-32 w-32 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-lg"
+                                />
+
+                                <div className="relative z-10 flex items-center gap-4">
+
+                                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#629AA9]/15">
+
+                                        <FaBandcamp
+                                            size={28}
+                                            className="text-[#629AA9]"
+                                        />
+
+                                    </div>
+
+                                    <div>
+
+                                        <h4 className="text-lg font-semibold text-white">
+                                            Buy on Bandcamp
+                                        </h4>
+
+                                        <p className="text-sm text-zinc-400">
+                                            High-quality digital download
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                                <HiArrowLongRight
+                                    className="relative z-10 text-4xl text-white transition-transform duration-300 group-hover:translate-x-2"
+                                />
+
+                            </Link>
+
+                        </div>
+
+                    </motion.div>
+                </div>
+
+                {/* Content Right div*/}
+
+                <div className="w-full">
 
                     <motion.div variants={reveal}>
 
@@ -391,6 +503,19 @@ export default function FeaturedMusic() {
                         />
 
                         <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-2xl">
+                            {/* Mirror Shine */}
+                            <motion.div
+                                animate={{
+                                    x: [-250, 1300],
+                                }}
+                                transition={{
+                                    duration: 1.5,
+                                    ease: [0.22, 1, 0.36, 1],
+                                    repeat: Infinity,
+                                    repeatDelay: 5,
+                                }}
+                                className="pointer-events-none absolute inset-y-0 -left-40 w-40 bg-gradient-to-r from-transparent via-white/15 to-transparent blur-xl"
+                            />
 
                             {/* Header */}
 
@@ -406,7 +531,7 @@ export default function FeaturedMusic() {
 
                                 <p className="mt-3 max-w-xl text-sm leading-7 text-zinc-400">
                                     Stream <span className="font-medium text-white">Psycho Sadistic Existence </span>
-                                     on your favourite platform or support the band directly through Bandcamp.
+                                    on your favourite platform or support the band directly through Bandcamp.
                                 </p>
 
                             </div>
@@ -475,7 +600,7 @@ export default function FeaturedMusic() {
 
                                 </Link>
 
-                               
+
                                 {/* Bandcamp */}
                                 <Link
                                     href="#"
