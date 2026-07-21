@@ -223,7 +223,7 @@ export default function Products() {
                                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                                 className="group relative flex-1 rounded-3xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden"
                             >
-                                <Link href={`/products/${product.slug}`} className="block h-full">
+                                <Link href = {`/products/${product.slug}`} className="block h-full">
 
                                     {/* Image */}
                                     <div className="relative aspect-square bg-[#0f0f10]">
@@ -238,22 +238,22 @@ export default function Products() {
                                     </div>
 
                                     {/* Bottom */}
-                                    <div className="px-4 pt-4 pb-5">
+                                    <div className="px-4 pt-4">
 
-                                        <h3 className="truncate text-[13px] lg:text-[15px] font-semibold text-white">
+                                        <h3 className="truncate text-[13px] font-semibold text-white lg:text-[15px]">
                                             {product.title}
                                         </h3>
 
-                                        <p className="mt-1 text-[12px] lg:text-[14px] font-medium text-[var(--camel)]">
+                                        <p className="mt-1 text-[12px] font-medium text-[var(--camel)] lg:text-[14px]">
                                             ₹{product.price}
                                         </p>
 
-                                        <div className="mt-4 flex justify-center">
-                                            <span className="flex h-10 w-full max-w-[220px] items-center justify-center rounded-xl border border-[var(--camel)] bg-transparent text-[12px] lg:text-[13px] font-medium text-[var(--camel)] transition-all duration-300 group-hover:bg-[var(--camel)] group-hover:text-black">
-                                                View Product →
-                                            </span>
-                                        </div>
+                                    </div>
 
+                                    <div className="mt-6">
+                                        <span className="flex h-11 w-full items-center justify-center bg-gradient-to-r from-[var(--bistre)] via-[var(--camel)] to-[var(--bistre)] text-[11px] font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 group-hover:brightness-110 sm:h-12 sm:text-[12px] lg:text-[13px]">
+                                            View Product
+                                        </span>
                                     </div>
 
                                 </Link>
@@ -282,7 +282,7 @@ export default function Products() {
                     >
                         {/* Mirror Shine */}
                         <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl">
-                            <span className="absolute left-[-35%] top-0 h-full w-[30%] -skew-x-12 bg-gradient-to-r from-transparent via-white/35 to-transparent animate-[shine_3.8s_linear_infinite]" />
+                            <span className="absolute left-[-35%] top-0 h-full w-[30%] -skew-x-12 bg-gradient-to-r from-transparent via-white/35 to-transparent animate-[shine_2s_linear_infinite]" />
                         </span>
 
                         <span className="relative z-10">
