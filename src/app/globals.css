@@ -194,6 +194,29 @@ button {
     opacity: 0;
   }
 }
+
+/* VH CTA */
+@keyframes shine {
+    0% {
+        transform: translateX(-250%);
+    }
+
+    100% {
+        transform: translateX(650%);
+    }
+}
+
+@keyframes arrowMove {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+}
+
 /* ===================================== */
 
 .dv-glass::before{
