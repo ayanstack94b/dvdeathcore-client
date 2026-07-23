@@ -38,8 +38,9 @@ const updateVisibleCount = () => {
         setVisibleCount(4);
     }
 };
-export default function Products() {
 
+
+export default function Products() {
 
     const [startIndex, setStartIndex] = useState(0);
     const [visibleCount, setVisibleCount] = useState(4);
@@ -244,14 +245,14 @@ export default function Products() {
                                             {product.title}
                                         </h3>
 
-                                        <p className="mt-1 text-[12px] font-medium text-[var(--camel)] lg:text-[14px]">
+                                        <p className="mt-1 text-[12px] font-medium text-[#d2bc98] lg:text-[14px]">
                                             ₹{product.price}
                                         </p>
 
                                     </div>
 
                                     <div className="mt-6">
-                                        <span className="flex h-11 w-full items-center justify-center bg-gradient-to-r from-[var(--bistre)] via-[var(--camel)] to-[var(--bistre)] text-[11px] font-semibold uppercase tracking-[0.12em] text-white transition-all duration-300 group-hover:brightness-110 sm:h-12 sm:text-[12px] lg:text-[13px]">
+                                        <span className="flex h-11 w-full items-center justify-center bg-[#181716]  text-[11px] font-semibold uppercase tracking-[0.12em] text-[#d2bc98] transition-all duration-300 group-hover:brightness-110 sm:h-12 sm:text-[12px] lg:text-[13px]">
                                             View Product
                                         </span>
                                     </div>

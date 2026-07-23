@@ -13,7 +13,7 @@ export const products = [
     sku: "P001",
     slug: "rebirth-through-ruins-regular",
 
-    title: "Rebirth Through Ruins Tee",
+    title: "Album Edition",
     subtitle: "Regular Fit",
 
     category: "T-Shirt",
@@ -47,7 +47,7 @@ export const products = [
     sku: "P002",
     slug: "rebirth-through-ruins-oversized",
 
-    title: "Rebirth Through Ruins Tee",
+    title: "Rebirth Through Ruins Regular Tee",
     subtitle: "Oversized Fit",
 
     category: "T-Shirt",
@@ -81,7 +81,7 @@ export const products = [
     sku: "P003",
     slug: "rebirth-through-ruins-full-sleeve",
 
-    title: "Rebirth Through Ruins Tee",
+    title: "Rebirth Through Ruins OS Tee",
     subtitle: "Full Sleeve",
 
     category: "T-Shirt",
@@ -96,8 +96,7 @@ export const products = [
     newArrival: true,
     inStock: true,
 
-    description:
-      "Official full sleeve Rebirth Through Ruins edition.",
+    description: "Official full sleeve Rebirth Through Ruins edition.",
 
     specifications: {
       fit: "Regular",
@@ -120,7 +119,7 @@ export const products = [
     sku: "P004",
     slug: "psycho-sadistic-existence-regular",
 
-    title: "Psycho Sadistic Existence Tee",
+    title: "Rebirth Through Ruins Full Sleeve Tee",
 
     subtitle: "Regular Fit",
 
@@ -138,8 +137,7 @@ export const products = [
 
     inStock: true,
 
-    description:
-      "Official album artwork regular fit T-shirt.",
+    description: "Official album artwork regular fit T-shirt.",
 
     specifications: {
       fit: "Regular",
@@ -157,9 +155,9 @@ export const products = [
     sku: "P005",
     slug: "psycho-sadistic-existence-oversized",
 
-    title: "Psycho Sadistic Existence Tee",
+    title: "Legacy White T-Shirt",
 
-    subtitle: "Oversized Fit",
+    subtitle: "Regular Fit",
 
     category: "T-Shirt",
 
@@ -175,8 +173,7 @@ export const products = [
 
     inStock: true,
 
-    description:
-      "Official oversized album artwork edition.",
+    description: "Official oversized album artwork edition.",
 
     specifications: {
       fit: "Oversized",
@@ -198,7 +195,7 @@ export const products = [
     sku: "P006",
     slug: "legacy-black-white-logo",
 
-    title: "Legacy Tee",
+    title: "Legacy Mug",
 
     subtitle: "White Logo",
 
@@ -234,7 +231,7 @@ export const products = [
     sku: "P007",
     slug: "legacy-black-gold-logo",
 
-    title: "Legacy Tee",
+    title: "Legacy Daw Edition",
 
     subtitle: "Gold Logo",
 
@@ -310,7 +307,7 @@ export const products = [
     sku: "P009",
     slug: "legacy-black-mug",
 
-    title: "Legacy Mug",
+    title: "Legacy Tee",
 
     subtitle: "Black",
 
@@ -343,7 +340,7 @@ export const products = [
     sku: "P010",
     slug: "psycho-sadistic-existence-mug",
 
-    title: "Album Artwork Mug",
+    title: "Legacy Badge",
 
     subtitle: "Black",
 
@@ -361,7 +358,8 @@ export const products = [
 
     inStock: true,
 
-    description: "Black ceramic mug featuring the Psycho Sadistic Existence artwork.",
+    description:
+      "Black ceramic mug featuring the Psycho Sadistic Existence artwork.",
 
     specifications: {
       color: "Black",
@@ -380,7 +378,7 @@ export const products = [
     sku: "P011",
     slug: "legacy-round-badge",
 
-    title: "Legacy Round Badge",
+    title: "Artistry Edition Black OS Tee",
 
     subtitle: "Black",
 
