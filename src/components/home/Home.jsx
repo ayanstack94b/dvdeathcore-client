@@ -10,7 +10,7 @@ export default function Home() {
         <main className="min-h-screen pt-20">
             <Hero />
             <Events/>
-            <AboutUs />
+            {/* <AboutUs /> */}
             <Products />
 
             <FeaturedMusic />

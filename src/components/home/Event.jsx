@@ -128,9 +128,11 @@ export default function Events() {
 
                         <BorderBeam />
 
-                        <div className="relative rounded-full border border-[#C89B3C]/20 bg-black/40 px-5 py-2 backdrop-blur-xl">
+                        <div className="relative flex items-center gap-2 rounded-full bg-black/45 px-3 py-1.5 backdrop-blur-xl sm:px-5 sm:py-2">
 
-                            <span className="text-[9px] text-center font-bold uppercase tracking-[0.3em] text-[#C89B3C] md:text-xs">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#C89B3C] shadow-[0_0_10px_rgba(200,155,60,0.8)]" />
+
+                            <span className="gold-text text-[10px] font-semibold uppercase tracking-[0.2em] sm:text-xs sm:tracking-[0.28em]">
                                 Upcoming Events
                             </span>
 
@@ -138,21 +140,16 @@ export default function Events() {
 
                     </div>
 
-                    <h2 className="text-4xl font-bold md:text-6xl">
-                        Experience
-                        <span className="text-(--camel)">
-                            {" "}
-                            Disquietude Vengeance{" "}
-                        </span>
+                    <h2 className="pt-8 text-left text-3xl font-bold leading-tight md:text-center md:text-6xl">
+                        Catch
+                        <span className="text-(--camel)"> Disquietude Vengeance </span>
                         Live
                     </h2>
 
-                    <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-                        Witness the next chapter of brutality. Explore
-                        upcoming performances, secure your tickets, and
-                        prepare for an unforgettable live experience.
+                    <p className="mx-auto mt-6 max-w-2xl text-left text-base leading-8 text-[var(--text-secondary)] md:text-center">
+                        Explore upcoming shows, find your nearest venue, and be part of the next
+                        Disquietude Vengeance live experience.
                     </p>
-
                 </motion.div>
 
                 {/* ========================================================
@@ -171,14 +168,19 @@ export default function Events() {
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.7 }}
                     >
+                        <div className="inline-flex items-center gap-3 rounded-full bg-white/[0.05] px-5 py-2 backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.35)]">
 
-                        <span className="inline-flex items-center  rounded-full border border-[var(--border)] bg-gradient-to-r from-[var(--camel)]/12 via-[var(--camel)]/6 to-transparent px-8 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--camel)] backdrop-blur-md sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.25em]">
-                            <span className="h-2 w-2 animate-pulse rounded-full bg-[var(--camel)]" />
-                            Next Event
-                        </span>
+                            <span className="h-2 w-2 rounded-full bg-[var(--camel)] shadow-[0_0_10px_rgba(179,153,119,0.8)]" />
+
+                            <span className="gold-text text-[11px] font-semibold uppercase tracking-[0.3em] sm:text-xs">
+                                Upcoming Show
+                            </span>
+
+                        </div>
+
 
                         <h3 className="mt-8 text-3xl font-bold md:text-5xl">
-                            Eastern India Deathcore Tour
+                            Asylum Raid Tour 
                         </h3>
 
                         <p className="mt-6 max-w-xl leading-8 text-[var(--text-secondary)]">
@@ -194,31 +196,21 @@ export default function Events() {
 
                             <div>
                                 <p className="text-xs uppercase tracking-[0.25em] text-[var(--camel)]">
-                                    Venue
+                                    Live Across India
                                 </p>
 
                                 <p className="mt-1 text-lg">
-                                    Venue Name
+                                    Multiple Cities • Limited Dates
                                 </p>
                             </div>
 
                             <div>
                                 <p className="text-xs uppercase tracking-[0.25em] text-[var(--camel)]">
-                                    City
+                                    Discover More
                                 </p>
 
                                 <p className="mt-1 text-lg">
-                                    Kolkata
-                                </p>
-                            </div>
-
-                            <div>
-                                <p className="text-xs uppercase tracking-[0.25em] text-[var(--camel)]">
-                                    Date
-                                </p>
-
-                                <p className="mt-1 text-lg">
-                                    18 October 2026
+                                    View Venues, Dates & Ticket Information
                                 </p>
                             </div>
 

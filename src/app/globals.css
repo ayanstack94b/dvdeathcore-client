@@ -82,7 +82,19 @@ img {
 button {
   cursor: pointer;
 }
-
+.gold-text {
+    background: linear-gradient(
+        180deg,
+        #fff7d6 0%,
+        #f4dc9b 20%,
+        #ddb96d 45%,
+        #c79549 70%,
+        #8d6025 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 /* ==========================================================
    Hero Embers
 ========================================================== */
