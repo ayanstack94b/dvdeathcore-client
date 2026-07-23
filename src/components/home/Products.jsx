@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { HiArrowRight, HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi2";
+import { HiArrowRight, HiOutlineArrowTopRightOnSquare, HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi2";
 import { products } from "@/data/products";
 
 const containerVariants = {
@@ -82,7 +82,7 @@ export default function Products() {
         { length: Math.min(visibleCount, products.length) },
         (_, i) => products[(startIndex + i) % products.length]
     );
-    
+
 
     const letterVariants = {
         hidden: {
@@ -157,7 +157,7 @@ export default function Products() {
                     </p>
 
                     <motion.h2
-                        className="mt-4 text-center text-[44px] font-black leading-[0.9] tracking-[-0.05em] text-white sm:text-[58px] lg:text-[76px]"
+                        className="mt-4 text-center text-[44px] font-black leading-[0.9] tracking-[-0.05em] vh-text-2 sm:text-[58px] lg:text-[76px]"
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: false, amount: 0.5 }}
@@ -224,7 +224,7 @@ export default function Products() {
                                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                                 className="group relative flex-1 rounded-3xl border border-[var(--border)] bg-[var(--surface)] overflow-hidden"
                             >
-                                <Link href = {`/products/${product.slug}`} className="block h-full">
+                                <Link href={`/products/${product.slug}`} className="block h-full">
 
                                     {/* Image */}
                                     <div className="relative aspect-square bg-[#0f0f10]">
@@ -277,21 +277,30 @@ export default function Products() {
                     variants={itemVariants}
                     className="mt-14 flex justify-center"
                 >
-                    <Link
+                    {/* <Link
                         href="/products"
                         className="group relative inline-flex h-12 w-full items-center justify-center gap-3 overflow-hidden rounded-xl bg-gradient-to-r from-[var(--bistre)] via-[var(--camel)] to-[var(--bistre)] px-6 text-[13px] font-semibold uppercase tracking-[0.15em] text-white shadow-[0_8px_35px_rgba(52,37,25,0.45)] transition-all duration-500 hover:scale-[1.02] sm:h-14 sm:w-auto sm:min-w-[260px] sm:px-10"
                     >
-                        {/* Mirror Shine */}
+                        Mirror Shine
                         <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-xl">
                             <span className="absolute left-[-35%] top-0 h-full w-[30%] -skew-x-12 bg-gradient-to-r from-transparent via-white/35 to-transparent animate-[shine_2s_linear_infinite]" />
                         </span>
 
-                        <span className="relative z-10">
-                            Browse Collection
-                        </span>
+                   
 
                         <HiArrowRight className="relative z-10 text-lg animate-[arrowMove_1.5s_ease-in-out_infinite]" />
+                    </Link> */}
+                    {/*============================ VH - CTA ===========================*/}
+                    <Link
+                        href={"#"}
+                        className="mt-12 cta-shine inline-flex items-center justify-center gap-3 rounded-xl border border-[#f1efec] bg-[#d2bc98] px-8 py-4 font-bold text-[#522a02] shadow-[0_10px_35px_rgba(179,153,119,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105 hover:shadow-[0_18px_50px_rgba(179,153,119,0.42)]"
+                    >
+                        Visit Vengeance House
+
+                        <HiOutlineArrowTopRightOnSquare className="text-lg" />
                     </Link>
+
+
                 </motion.div>
 
             </motion.div>

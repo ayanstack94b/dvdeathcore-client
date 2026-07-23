@@ -195,7 +195,28 @@ button {
   }
 }
 
+/* ========================================
+   Vengeance House Utilities
+======================================== */
+
+.vh-bg {
+  background-color: #d2bc98;
+}
+
+.vh-text {
+  color: #522a02;
+}
+.vh-text-2 {
+  color: #d2bc98;
+}
+
+.vh-border {
+  border-color: #f1efec;
+}
+
+
 /* VH CTA browse collection*/
+
 @keyframes shine {
     0% {
         transform: translate(-220%, -25%) skewX(-12deg);

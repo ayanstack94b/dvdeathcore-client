@@ -267,9 +267,9 @@ export const products = [
     sku: "P008",
     slug: "legacy-white-red-logo",
 
-    title: "Legacy Tee",
+    title: "Legacy Black Tee",
 
-    subtitle: "Red Logo",
+    subtitle: "White Logo",
 
     category: "T-Shirt",
 
@@ -290,7 +290,7 @@ export const products = [
     specifications: {
       fit: "Regular",
       fabric: "100% Cotton",
-      color: "White",
+      color: "Black",
     },
 
     sizes: ["S", "M", "L", "XL", "XXL"],
