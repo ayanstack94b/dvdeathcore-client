@@ -30,7 +30,7 @@ const Hero = () => {
                             <div className="relative rounded-full border border-[#C89B3C]/20 bg-black/40 px-5 py-2 backdrop-blur-xl">
 
                                 <span className="text-[9px] text-center font-bold uppercase tracking-[0.3em] text-[#C89B3C] md:text-xs">
-                                    Independent Deathcore Band
+                                    Festival & Tour Archive
                                 </span>
 
                             </div>

@@ -15,7 +15,7 @@ export default function Events() {
         seconds: "00",
         status: "upcoming",
     });
-    const eventDate = new Date("2026-10-18T17:00:00");
+    const eventDate = new Date("2026-09-06T18:00:00+05:30");
 
     useEffect(() => {
         const updateCountdown = () => {
