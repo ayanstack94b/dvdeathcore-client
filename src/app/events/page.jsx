@@ -80,7 +80,7 @@ export default function EventsPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="relative inline-flex overflow-hidden rounded-full p-px"
+                            className="relative md:py-10 pt-10 pb-6 inline-flex overflow-hidden rounded-full p-px"
                         >
 
 
@@ -97,7 +97,7 @@ export default function EventsPage() {
                                 </div>
 
                             </div>
-                                   
+
 
                         </motion.div>
 
@@ -107,7 +107,7 @@ export default function EventsPage() {
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.7 }}
-                            className="mt-8 text-5xl font-bold leading-tight md:text-7xl"
+                            className="md:border-none border-l-4 border-gray-500 pl-5 md:pl-8 md:text-center text-left text-4xl font-bold leading-tight sm:text-5xl lg:text-7xl"
                         >
                             Experience
                             <span className="text-[var(--camel)]">
@@ -122,11 +122,10 @@ export default function EventsPage() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.35, duration: 0.7 }}
-                            className="mt-8 max-w-2xl text-base leading-8 text-[var(--text-secondary)] md:text-lg"
+                            className="mt-6 max-w-xl text-left text-base leading-8 text-[var(--text-secondary)] md:text-lg"
                         >
-                            Explore upcoming tours, festival appearances,
-                            exclusive performances, and every milestone from
-                            our journey on stage.
+                            Explore upcoming tours, festival appearances, exclusive performances,
+                            and every milestone from our journey on stage.
                         </motion.p>
 
                         {/* CTA */}
@@ -135,48 +134,20 @@ export default function EventsPage() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5, duration: 0.7 }}
-                            className="mt-12 flex flex-col gap-4 sm:flex-row"
+                            className="mt-10"
                         >
-
-                            <a
-                                href="#upcoming-tour"
-                                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[var(--camel)] px-7 py-3 font-semibold text-black transition hover:scale-[1.03]"
-                            >
-                                <CalendarDays size={18} />
-                                Upcoming Tour
-                            </a>
-
                             <a
                                 href="#past-events"
-                                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[var(--camel)]/30 px-7 py-3 font-semibold transition hover:border-[var(--camel)]"
+                                className="flex h-12 w-full cta-shine items-center justify-center rounded-xl border border-[#FFE998]/80 bg-transparent px-6 text-sm font-semibold tracking-wide text-white backdrop-blur-sm transition-all duration-300 hover:border-[#FFE998] hover:bg-[#FFE998]/8 hover:text-[#FFE998] hover:shadow-[0_0_20px_rgba(255,233,152,0.12)] sm:w-56"
                             >
-                                <History size={18} />
+                                <History size={18} className="mr-2" />
                                 Past Shows
                             </a>
 
                         </motion.div>
 
                     </div>
-
                 </div>
-
-                {/* Scroll */}
-
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{
-                        repeat: Infinity,
-                        duration: 1.8,
-                    }}
-                    className="absolute bottom-10 left-1/2 -translate-x-1/2"
-                >
-
-                    <ChevronDown
-                        size={32}
-                        className="text-[var(--camel)]"
-                    />
-
-                </motion.div>
 
             </section>
 
@@ -186,7 +157,7 @@ export default function EventsPage() {
 
             <section
                 id="upcoming-tour"
-                className="relative py-24"
+                className="relative py-10"
             >
 
                 <div className="container mx-auto px-6">
@@ -230,7 +201,7 @@ export default function EventsPage() {
 
                                     <Image
                                         src="/images/ART-DXM_Poster.png"
-                                        alt={upcomingTour.title}
+                                        alt={upcomingTour?.title}
                                         width={800}
                                         height={1200}
                                         priority
@@ -278,13 +249,15 @@ export default function EventsPage() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: .7 }}
-                            className="flex flex-col justify-center"
+                            className="flex flex-col justify-center items-start"
                         >
 
-                            <div className="inline-flex w-fit rounded-full border border-[var(--camel)]/20 bg-[var(--surface)] px-4 py-2">
+                            <div className="inline-flex items-center gap-3 rounded-full bg-white/[0.05] px-5 py-2 backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.08),0_8px_24px_rgba(0,0,0,0.35)]">
 
-                                <span className="gold-text text-xs uppercase tracking-[0.25em]">
-                                    Upcoming
+                                <span className="h-2 w-2 rounded-full bg-[var(--camel)] shadow-[0_0_10px_rgba(179,153,119,0.8)]" />
+
+                                <span className="gold-text text-[11px] font-semibold uppercase tracking-[0.3em] sm:text-xs">
+                                    Upcoming Show
                                 </span>
 
                             </div>
