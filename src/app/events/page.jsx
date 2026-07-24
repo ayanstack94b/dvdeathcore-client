@@ -1,25 +1,22 @@
 "use client";
 
 import { UpcomingEvents } from "@/data/upcomingEvents";
-import { PastEvents } from "@/data/pastEvents";
-
 import Hero from "./Hero";
 import TicketInformation from "./TicketInformation";
 import FeaturedTour from "./FeaturedTour";
+import PastEventsSection from "./PastEventsSection ";
+import { pastEventsData } from "@/data/pastEventsData";
 
 
 export default function EventsPage() {
 
     const upcomingTour = UpcomingEvents.find((tour) => tour.status === "upcoming");
-    PastEvents.filter((tour) => tour.status === "completed")
+    pastEventsData.filter((tour) => tour.status === "completed")
 
     return (
         <main className="relative overflow-hidden bg-[var(--bg-primary)] text-[var(--text-primary)]">
 
-            {/* ==========================================================
-                        Global Page Background
-                ========================================================== */}
-
+            {/* Global Page Background */}
             <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
 
                 {/* Base */}
@@ -66,7 +63,7 @@ export default function EventsPage() {
 
             </div>
 
-{/* Body */}
+            {/* Body */}
 
             <div className="relative z-10">
 
@@ -76,27 +73,13 @@ export default function EventsPage() {
 
                 <TicketInformation />
 
-                {/* <PastEvents />
+                <PastEventsSection />
 
-                <Gallery />
+                {/* <Gallery /> */}
 
-                <FAQ /> */}
+                {/* <FAQ />  */}
 
             </div>
-
-
-
-
-
-
-
-
-            {/* ==========================================================
-                    Ticket Information
-                ========================================================== */}
-
-           
-
         </main>
     );
 }

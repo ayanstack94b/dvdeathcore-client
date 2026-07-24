@@ -77,10 +77,10 @@ const Hero = () => {
                     >
                         <a
                             href="#past-events"
-                            className="flex h-12 w-full cta-shine items-center justify-center rounded-xl border border-[#FFE998]/80 bg-transparent px-6 text-sm font-semibold tracking-wide text-white backdrop-blur-sm transition-all duration-300 hover:border-[#FFE998] hover:bg-[#FFE998]/8 hover:text-[#FFE998] hover:shadow-[0_0_20px_rgba(255,233,152,0.12)] sm:w-56"
+                            className="flex h-12 w-full cta-shine items-center justify-center rounded-xl border border-[#FFE998]/80 bg-transparent px-6 text-sm font-semibold tracking-wide text-[#FFE998] backdrop-blur-sm transition-all duration-300 hover:border-[#FFE998] hover:bg-[#FFE998]/8 hover:text-[#FFE998] hover:shadow-[0_0_20px_rgba(255,233,152,0.12)] sm:w-56"
                         >
                             <History size={18} className="mr-2" />
-                            Past Shows
+                           Explore Past Events
                         </a>
 
                     </motion.div>
