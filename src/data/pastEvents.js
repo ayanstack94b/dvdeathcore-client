@@ -1,6 +1,6 @@
 
 
-export  const tours = [
+export const PastEvents = [
   {
     id: "asylum-raid-tour-2026",
 
