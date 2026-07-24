@@ -75,8 +75,8 @@ export default function Events() {
         >
 
             {/* ============================================================
-        SECTION BACKGROUND
-    ============================================================ */}
+                                SECTION BACKGROUND
+                ============================================================ */}
 
             <div className="absolute inset-0 z-0 overflow-hidden">
 

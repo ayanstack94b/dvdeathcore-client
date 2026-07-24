@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-// import { tours } from "@/data/tours";
 import { CalendarDays, ChevronDown, History } from "lucide-react";
 import { tours } from "@/data/tours";
+import Image from "next/image";
+import BorderBeam from "@/components/ui/BorderBeam";
 
 export default function EventsPage() {
 
@@ -15,26 +15,60 @@ export default function EventsPage() {
         <main className="relative overflow-hidden bg-[var(--bg-primary)] text-[var(--text-primary)]">
 
             {/* ==========================================================
-                                Hero Section
-            ========================================================== */}
+                        Global Page Background
+                ========================================================== */}
 
-            <section className="relative flex min-h-screen items-center overflow-hidden">
+            <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
 
-                {/* Background */}
+                {/* Base */}
 
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-[#050505]" />
 
-                    <div className="absolute inset-0 bg-[var(--bg-primary)]" />
+                {/* Wine Gradient Across Entire Page */}
 
-                    <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#5a0e18]/20 blur-[180px]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#321015_0%,#1b080c_28%,#090909_72%)]" />
 
-                    <div className="absolute left-0 top-1/3 h-72 w-72 rounded-full bg-[var(--camel)]/5 blur-[140px]" />
+                {/* Hero Glow */}
 
-                    <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-[#7b1324]/20 blur-[140px]" />
+                <div className="absolute left-1/2 top-[-250px] h-[900px] w-[900px] -translate-x-1/2 rounded-full bg-[#7a1423]/35 blur-[220px]" />
 
-                    <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+                {/* Upcoming Tour */}
 
-                </div>
+                <div className="absolute -left-64 top-[900px] h-[650px] w-[650px] rounded-full bg-[#7a1423]/30 blur-[220px]" />
+
+                <div className="absolute -right-64 top-[1200px] h-[650px] w-[650px] rounded-full bg-[#5b0b18]/25 blur-[220px]" />
+
+                {/* Timeline */}
+
+                <div className="absolute left-1/2 top-[2200px] h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-[#66101d]/25 blur-[220px]" />
+
+                {/* Gallery */}
+
+                <div className="absolute -right-64 top-[3300px] h-[650px] w-[650px] rounded-full bg-[#7a1423]/25 blur-[220px]" />
+
+                <div className="absolute -left-64 top-[3800px] h-[650px] w-[650px] rounded-full bg-[#5b0b18]/20 blur-[220px]" />
+
+                {/* Gold Highlights */}
+
+                <div className="absolute left-1/2 top-[650px] h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-[var(--camel)]/8 blur-[180px]" />
+
+                <div className="absolute left-20 top-[2600px] h-[350px] w-[350px] rounded-full bg-[var(--camel)]/6 blur-[150px]" />
+
+                {/* Vignette */}
+
+                <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]" />
+
+                {/* Glass Overlay */}
+
+                <div className="absolute inset-0 bg-black/15 backdrop-blur-[2px]" />
+
+            </div>
+
+
+            {/* Hero */}
+
+            <section className="relative flex min-h-screen items-center">
+
 
                 <div className="container relative z-10 mx-auto px-6">
 
@@ -49,13 +83,21 @@ export default function EventsPage() {
                             className="relative inline-flex overflow-hidden rounded-full p-px"
                         >
 
-                            <div className="rounded-full border border-[var(--camel)]/20 bg-black/40 px-4 py-2 backdrop-blur-xl">
 
-                                <span className="gold-text text-[10px] font-semibold uppercase tracking-[0.25em]">
-                                    Live Events
-                                </span>
+                            <div className="relative inline-flex overflow-hidden rounded-full p-px">
+
+                                <BorderBeam />
+
+                                <div className="relative rounded-full border border-[#C89B3C]/20 bg-black/40 px-5 py-2 backdrop-blur-xl">
+
+                                    <span className="text-[9px] text-center font-bold uppercase tracking-[0.3em] text-[#C89B3C] md:text-xs">
+                                        Independent Deathcore Band
+                                    </span>
+
+                                </div>
 
                             </div>
+                                   
 
                         </motion.div>
 
@@ -140,7 +182,7 @@ export default function EventsPage() {
 
             {/* ==========================================================
                     Featured Upcoming Tour
-========================================================== */}
+                ========================================================== */}
 
             <section
                 id="upcoming-tour"
@@ -170,7 +212,7 @@ export default function EventsPage() {
 
                     </div>
 
-                    <div className="grid gap-10 lg:grid-cols-[430px_1fr]">
+                    <div className="grid items-center gap-10 lg:grid-cols-[420px_minmax(0,1fr)] xl:grid-cols-[480px_minmax(0,1fr)]">
 
                         {/* Poster */}
 
@@ -184,11 +226,18 @@ export default function EventsPage() {
 
                             {upcomingTour?.poster ? (
 
-                                <img
-                                    src={upcomingTour.poster}
-                                    alt={upcomingTour.title}
-                                    className="aspect-[4/5] h-full w-full object-cover"
-                                />
+                                <div className="overflow-hidden rounded-3xl border border-[var(--border)] bg-[var(--surface)]">
+
+                                    <Image
+                                        src="/images/ART-DXM_Poster.png"
+                                        alt={upcomingTour.title}
+                                        width={800}
+                                        height={1200}
+                                        priority
+                                        className="h-auto w-full object-cover transition duration-500 hover:scale-[1.03]"
+                                    />
+
+                                </div>
 
                             ) : (
 
